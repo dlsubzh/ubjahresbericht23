@@ -27,4 +27,3 @@ function end_loader() {
       end_loader();
     }, 3000);
   });
-  

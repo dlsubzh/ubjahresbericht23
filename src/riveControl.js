@@ -1,14 +1,11 @@
-import { Rive, Fit, Layout, EventType } from '@rive-app/canvas';
-
 let buttonCanvasExample = document.getElementById("canvas");
-
 
 const r = new rive.Rive({
     src: "https://dlsubzh.github.io/ubjahresbericht23/assets/rive/ub_jahresbericht23.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
     artboard: "UBJahresbericht23",
-    stateMachines: ["UBJahresbericht23"],
+    stateMachines: "UBJahresbericht23",
     //automaticallyHandleEvents: true, 
     onLoad: () => {
       r.resizeDrawingSurfaceToCanvas();
@@ -31,7 +28,7 @@ const r = new rive.Rive({
       } */
     }
 
-    r.on(EventType.RiveEvent, onRiveEventReceived);
+  r.on(rive.EventType.RiveEvent, onRiveEventReceived);
 
 
 
