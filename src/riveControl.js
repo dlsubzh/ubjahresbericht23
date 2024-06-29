@@ -34,7 +34,7 @@ const r = new rive.Rive({
 
   function hideVid() {
 
-    const popupContent = document.getElementById("popupContent");
+    const popupContent = document.getElementById("Coffee");
     popupContent.style.visibility = "hidden";
 
   }
