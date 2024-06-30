@@ -1,4 +1,4 @@
-/*
+
 document.onreadystatechange = function() {
     if (document.readyState !== "complete") {
         document.querySelector(
@@ -12,7 +12,6 @@ document.onreadystatechange = function() {
           "main").style.visibility = "visible";
     }
 };
-*/
 
 function end_loader() {
     var loader = document.querySelector(".lds-ellipsis");
@@ -21,9 +20,25 @@ function end_loader() {
       loader.style.display = "none";
     }, 800);
   }
+
   
   window.addEventListener("load", function () {
     setTimeout(function () {
       end_loader();
     }, 3000);
   });
+
+
+  function start_loader() {
+    var loader = document.querySelector(".lds-ellipsis");
+    loader.style.opacity = 1;
+    loader.style.display = "block";
+    document.querySelector("main").style.visibility = "visible";
+    setTimeout(function () {
+        end_loader();
+    }, 3000);
+}
+
+window.addEventListener("resize", function () {
+    start_loader();
+});

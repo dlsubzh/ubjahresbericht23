@@ -1,6 +1,8 @@
-let buttonCanvasExample = document.getElementById("canvas");
+let r;
 
-const r = new rive.Rive({
+function calcRiveSize() {
+
+  r = new rive.Rive({
     src: "https://dlsubzh.github.io/ubjahresbericht23/assets/rive/ub_jahresbericht23.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
@@ -11,34 +13,43 @@ const r = new rive.Rive({
       r.resizeDrawingSurfaceToCanvas();
     },
     });
+  
 
     
-
     function onRiveEventReceived(riveEvent) {
       console.log(riveEvent)
-      /*(const eventData = riveEvent.data;
+      const eventData = riveEvent.data;
       const eventProperties = eventData.properties;
-      if (eventData.type === RiveEventType.General) {
+      if (eventData.type === rive.RiveEventType.General) {
         console.log("Coffee_Clicked", eventData.name);
         // Added relevant metadata from the event
         console.log("Coffee_Clicked", eventProperties.Coffee_Clicked);
         const elemId = "Coffee";
         const popupContent = document.getElementById(elemId);
         popupContent.style.visibility = "visible";
-      } */
+      }
     }
-
+  
   r.on(rive.EventType.RiveEvent, onRiveEventReceived);
+}
 
+function cleanupRive (){
+  r.cleanup();
+}
+ calcRiveSize()
+ window.addEventListener('resize', cleanupRive)
+ window.addEventListener('resize', calcRiveSize)
+ console.log("resizeDrawingSurfacetoCanvas done")
 
 
   function hideVid() {
+    const popupContent = document.getElementsByClassName("popup");
+    for (let i = 0; i < popupContent.length; i++) {
+        popupContent[i].style.visibility = "hidden";
+    }
 
-    const popupContent = document.getElementById("Coffee");
-    popupContent.style.visibility = "hidden";
-
-  }
-
+    
+}
 
       /*onStateChange: (riveEvent) => {
       const newStates = riveEvent.data;
