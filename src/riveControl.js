@@ -3,7 +3,7 @@ let r;
 function calcRiveSize() {
 
   r = new rive.Rive({
-    src: "https://dlsubzh.github.io/ubjahresbericht23/assets/rive/ub_jahresbericht23.riv",
+    src: "./assets/rive/ub_jahresbericht23.riv",
     canvas: document.getElementById("canvas"),
     autoplay: true,
     artboard: "UBJahresbericht23",
@@ -21,11 +21,10 @@ function calcRiveSize() {
       const eventData = riveEvent.data;
       const eventProperties = eventData.properties;
       if (eventData.type === rive.RiveEventType.General) {
-        console.log("Coffee_Clicked", eventData.name);
-        // Added relevant metadata from the event
-        console.log("Coffee_Clicked", eventProperties.Coffee_Clicked);
-        const elemId = "Coffee";
-        const popupContent = document.getElementById(elemId);
+        console.log("Event Registered: ", eventData.name);
+        let eventName = eventData.name;
+        //const elemId = eventProperties.eventName;
+        const popupContent = document.getElementById(eventName);
         popupContent.style.visibility = "visible";
       }
     }

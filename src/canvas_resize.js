@@ -3,8 +3,8 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 // Set display size (css pixels).
-const sizew = 600;
-const sizeh = 1875;
+const sizew = 700;
+const sizeh = 1970;
 canvas.style.width = `${sizew}px`;
 canvas.style.height = `${sizeh}px`;
 
@@ -18,7 +18,7 @@ console.log(canvas.height)
 
 // Normalize coordinate system to use CSS pixels.
 ctx.scale(scale, scale);
-console.log(ctx + "ctx")
+console.log(ctx + " ctx")
 
 /*
 ctx.fillStyle = "#bada55";

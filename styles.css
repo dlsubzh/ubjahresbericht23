@@ -1,49 +1,160 @@
-c1 {
-  font-family: "Tahoma, Verdana, sans-serif";
-  font-weight: bold;
-  color: #bbffca;
-  text-align: center;
+/* Source Sans Pro Black */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-BLACK.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-BLACKITALIC.TTF') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+  
+
+/* Source Sans Pro Bold */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-BOLD.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-BOLDITALIC.TTF') format('truetype');
+  font-weight: 700;
+  font-style: italic;
 }
 
-c2 {
-  font-family: "Tahoma, Verdana, sans-serif";
-  font-weight: normal;
-  color: #6b997e;
-  text-align: center;
-  line-height: 2;
+ /* Source Sans Pro Semibold */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-SEMIBOLD.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-SEMIBOLDITALIC.TTF') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+  
+
+ /* Source Sans Pro Regular */
+ @font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-REGULAR.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-ITALIC.TTF') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+  
+ /* Source Sans Pro Light */
+ @font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-LIGHT.TTF') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-LIGHTITALIC.TTF') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+ /* Source Sans Pro Extralight */
+ @font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-EXTRALIGHT.TTF') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url('assets/fonts/SourceSansPro/SOURCESANSPRO-EXTRALIGHTITALIC.TTF') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
 
   canvas {
     z-index: 1;
-    top: -95px;
     position: absolute;  
   }
 
-  Coffee {
-visibility: hidden;
+  .flex_center{
+  display: flex;
+  justify-content: center;
 
   }
+  .text_box {
+    z-index: 2;
+    position: absolute;
+    width: 85ch;
+    background-color: #dcf2e1;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: thin;
+    border-color: #8CF3BE;
+    padding: 45px;
+    margin: 30px;
+    line-height: 1.5rem;
+
+  }
+  h1{
+    font-size: 1.5rem;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+    margin-top: 4rem;
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+  }
+
+
   .popup {
+    z-index: 2;
     visibility: hidden;
-    position: relative;
+    position: fixed;
+    border-radius: 15px;
+    top: 7vh;
+    padding: 4vh;
+    height:calc(60vw * 9 / 16);
+    width: 60vw;
+    left: 18vw;
     display: flex;
     justify-content: center; /* centers child horizontally */
     align-items: flex-start;
-    border-radius: 15px;
-    top: 7vh;
-    padding: 3vh;
-    margin: auto;
-    z-index: 2;
-    height:70vh;
-    width: calc(70vh * 16 / 9);
     background-color: rgba(0, 0, 0, 0.5);
   }
 
   iframe {
     position: relative;
-    height:70vh;
-    width: calc(70vh * 16 / 9);
+    height: calc(60vw * 9 / 16);
+    width: 60vw;
+  
   }
 
   .material-icons {
