@@ -20,12 +20,13 @@ c2 {
   canvas {
     z-index: 1;
     top: -95px;
-    position: absolute;
-    
-
-    
+    position: absolute;  
   }
 
+  Coffee {
+visibility: hidden;
+
+  }
   .popup {
     visibility: hidden;
     position: relative;
