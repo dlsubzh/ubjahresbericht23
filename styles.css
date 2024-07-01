@@ -90,8 +90,9 @@
   font-style: italic;
 }
 :root{
-
 --ubpink:  rgb(229, 109, 235);
+--videowidth: 60vw;
+--videopadding: 4vw;
 }
 
 #mobile-warning {
@@ -108,25 +109,39 @@
   z-index: 1000;
 }
 
+h1{
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  margin-top: 4rem;
+}
+
+p {
+  font-size: 1rem;
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+}
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-  canvas {
+canvas {
     z-index: 1;
     position: absolute;  
-  }
+}
 
-  .flex_center{
+
+
+.flex_center{
   display: flex;
   justify-content: center;
+}
 
-  }
-  .text_box {
-    z-index: 2;
+.text_box {
     position: absolute;
-    width: 85ch;
+    z-index: 2;
+    width: 50vw;
     background-color: #dcf2e1;
     border-style: solid;
     border-radius: 15px;
@@ -136,49 +151,44 @@ body::-webkit-scrollbar {
     margin: 30px;
     line-height: 1.5rem;
 
-  }
-  h1{
-    font-size: 1.5rem;
-    font-family: "Source Sans Pro";
-    font-weight: 700;
-    margin-top: 4rem;
-  }
+}
 
-  p {
-    font-size: 1rem;
-    font-family: "Source Sans Pro";
-    font-weight: 400;
-  }
+#Ruedi {
+  visibility: hidden;
+}
 
+.popup {
+  z-index: 2;
+  top: 10vh;
+  visibility: hidden;
+  position: fixed;
+  left: calc((100vw - (var(--videowidth) + 2 * var(--videopadding))) / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .popup {
-    z-index: 2;
-    visibility: hidden;
-    position: fixed;
-    border-radius: 15px;
-    top: 7vh;
-    padding: 4vh;
-    height:calc(60vw * 9 / 16);
-    width: 60vw;
-    left: 18vw;
-    display: flex;
-    justify-content: center; /* centers child horizontally */
-    align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+.video-container {
+  border-radius: 15px;
+  padding: var(--videopadding);
+  height:calc(var(--videowidth) * 9 / 16);
+  width: var(--videowidth);
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
   iframe {
     position: relative;
-    height: calc(60vw * 9 / 16);
-    width: 60vw;
+    border-radius: 7px;
+    height: calc(var(--videowidth) * 9 / 16);
+    width: var(--videowidth);
   
   }
 
   .material-icons {
     color: var(--ubpink);
     z-index: 3;
-    top: -4vh;
-    position: absolute;
+    position: relative;
+    left: calc((var(--videowidth) / 2) + var(--videopadding) - 16px) ;
     transform: scale(1.5); /* Scale on hover */
   }
 
