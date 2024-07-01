@@ -89,7 +89,24 @@
   font-weight: 200;
   font-style: italic;
 }
+:root{
 
+--ubpink:  rgb(229, 109, 235);
+}
+
+#mobile-warning {
+  display: none;
+  background-color: var(--ubpink) ;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  position: fixed;
+  top: 25vh;
+  width: 80vw;
+  z-index: 1000;
+}
 
 
 body::-webkit-scrollbar {
@@ -158,7 +175,7 @@ body::-webkit-scrollbar {
   }
 
   .material-icons {
-    color: rgb(229, 109, 235);
+    color: var(--ubpink);
     z-index: 3;
     top: -4vh;
     position: absolute;

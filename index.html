@@ -10,6 +10,10 @@
         
     </head>
     <body >
+        <div class="flex_center">
+            <div id="mobile-warning">Bitte öffnet diese Website mit einem Desktop-Browser. Die Applikation ist nicht für mobile Geräte optimiert!</div>
+        </div>
+        
 
         <!-- Für Loader -->
         <div class="lds-ellipsis" id="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
@@ -163,5 +167,16 @@
         <script src="./src/riveControl.js"></script>
         <script src="./src/loader.js"></script>
         <script src="./src/canvas_resize.js"></script>
+        <script>
+            function isMobileDevice() {
+                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                return /android|iPhone|iPad|iPod|opera mini|IEMobile|WPDesktop/i.test(userAgent);
+            }
+    
+            if (isMobileDevice()) {
+                document.getElementById('mobile-warning').style.display = 'block';
+                cleanupRive();
+            }
+        </script>
     </body>
 </html>
